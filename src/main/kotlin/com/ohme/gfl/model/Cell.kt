@@ -10,6 +10,15 @@ class Cell {
     var isAlive: Boolean = false
     val position: Position
 
+
+    constructor(i: Int, j: Int){
+        this.isAlive = false
+        this.position = Position(i, j)
+    }
+    constructor(i: Int, j: Int, isAlive: Boolean)  {
+        this.isAlive = isAlive
+        this.position = Position(i, j)
+    }
     /**
      * rule validator for each cell
      */

@@ -3,7 +3,7 @@ package com.ohme.gfl.pattern
 import com.ohme.gfl.service.Game
 
 /**
- * Glider pattern for a 25*25 grid initiating cells  from the middle
+ * Glider pattern for a 25*25 grid initiating alive cells from the middle
  */
 class Glider : Game(25, 25) {
     init {
