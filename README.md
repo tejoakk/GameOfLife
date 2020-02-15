@@ -10,7 +10,7 @@ At each step in time, the following transitions occur:
 4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 ### Pattern
-Following the Glider pattern placed in a middle of sized of 25 X 25
+Following the Glider pattern placed in a middle of grid sized of 25 * 25
 
 
 

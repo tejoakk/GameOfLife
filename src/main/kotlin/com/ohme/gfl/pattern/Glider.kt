@@ -7,10 +7,10 @@ import com.ohme.gfl.service.Game
  */
 class Glider : Game(25, 25) {
     init {
-        setCellInitialState(11, 10)
-        setCellInitialState(12, 11)
-        setCellInitialState(13, 9)
-        setCellInitialState(13, 10)
-        setCellInitialState(13, 11)
+        setCellInitialState(12, 12)
+        setCellInitialState(13, 13)
+        setCellInitialState(14, 12)
+        setCellInitialState(14, 13)
+        setCellInitialState(13, 14)
     }
 }

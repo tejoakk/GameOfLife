@@ -1,11 +1,16 @@
 package com.ohme.gfl.model
 
+import com.ohme.gfl.pattern.Glider
+
 /**
- * data class to represent the list of cells, total alive, total dead and new births
+ * class to represent the current state and previous state of the Game
+ * list of cells, total alive, total dead and new births
  */
 
-data class Grid(
-    val cells: List<List<Cell>>? = emptyList(),
-    val numAliveCells: Int? = 0,
-    val currentBirths: Int? = 0,
-    val numDeadCells: Int? = 0)
+class Grid{
+    lateinit var grid: Array<Array<Cell?>>
+    var numAliveCells = 0
+    var currentBirths = 0
+    var currentDeaths = 0
+
+}
