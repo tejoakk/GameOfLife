@@ -8,6 +8,7 @@ class GflApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		//Glider().start()
 	}
 
 }

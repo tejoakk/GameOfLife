@@ -8,8 +8,7 @@ import com.ohme.gfl.constants.Constants
 
 class Cell {
     var isAlive: Boolean = false
-    val position: Position
-
+    var position: Position
 
     constructor(i: Int, j: Int){
         this.isAlive = false
@@ -31,5 +30,19 @@ class Cell {
         }
     }
 
+    operator fun invoke(isAlive: Boolean) {
+        this.isAlive = isAlive
+    }
+
+    /**
+     *  display 'X' for alive and '.' for dead
+     */
+    fun showPosition(): String = if(isAlive) Constants.aliveCell else Constants.deadCell
+
+    /**
+     *  add counts for alive cells
+     */
+    fun addCount(): Int = if (isAlive) 1 else 0
 }
+
 

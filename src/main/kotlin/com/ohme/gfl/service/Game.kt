@@ -1,6 +1,8 @@
 package com.ohme.gfl.service
 
 import com.ohme.gfl.model.Grid
+import org.springframework.scheduling.annotation.EnableScheduling
+import org.springframework.scheduling.annotation.Scheduled
 
 /**
  * Game of life
@@ -16,7 +18,7 @@ open class Game {
     private var columns = 0
 
     /**
-     * constructor to initiate Grids
+     * constructor with rows and columns
      */
     constructor(m: Int, n: Int) {
         rows = m
@@ -30,6 +32,19 @@ open class Game {
     }
 
     /**
+     * represent the current state of grid
+     */
+    fun tick() {
+        previousState!!.cloneGridFrom(currentState)
+        currentState!!.changeStates(previousState)
+        born += currentState!!.currentBirths
+        deaths += currentState!!.currentDeaths
+        actives = currentState!!.numAliveCells
+        dead = currentState!!.numDeadCells
+        println(currentState)
+    }
+
+    /**
      * set the initial state of the grid
      */
     fun setCellInitialState(i: Int, j: Int) {
@@ -37,4 +52,19 @@ open class Game {
         actives++
         dead--
     }
+
+    /**
+     * start the game and loop through
+     */
+    fun start() {
+        while (true) {
+            try {
+                Thread.sleep(500)
+                tick()
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            }
+        }
+    }
 }
+
